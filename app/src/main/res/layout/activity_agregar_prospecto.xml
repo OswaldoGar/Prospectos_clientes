@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    tools:context=".Activities.AgregarProspecto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Agregar prospecto"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Por favor ingresa los siguientes datos del prospecto a insertar."
+                android:textSize="15dp"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:text="Datos personales"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:text="Nombre*:"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/EditNombre"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:hint="Ej. Oswaldo"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:text="Primer apellido*:"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/EditPrimerA"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:hint="Ej. García"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:text="Segundo apellido:"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/EditSegundoA"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:hint="Ej. Lemus"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:text="Teléfono*:"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/EditTelefono"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:hint="Ej. 7751344743"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:text="RFC*:"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/EditRFC"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:hint="Ej. GALO951204HH"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:text="Dirección"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:text="Calle*:"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/EditCalle"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:hint="Ej. Benito Juarez"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:text="Número*:"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/EditNumero"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:hint="Ej. 209"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:text="Colonia*:"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/EditColonia"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:hint="Ej. Lindavista"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:text="Código postal*:"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/EditCP"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:hint="Ej. 43629"
+                android:textSize="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:text="Documentos"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerDocumentos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <Button
+                android:id="@+id/buttonAgregarDocumento"
+                android:layout_width="wrap_content"
+                android:layout_gravity="end"
+                android:layout_height="wrap_content"
+                android:text="Agregar"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/buttonCancelar"
+                    android:layout_width="wrap_content"
+                    android:text="Cancelar"
+                    android:layout_height="wrap_content"/>
+
+                <Button
+                    android:id="@+id/buttonGuardar"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Guardar"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
