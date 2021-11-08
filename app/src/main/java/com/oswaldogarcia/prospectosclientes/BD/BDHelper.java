@@ -23,26 +23,26 @@ public class BDHelper extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE IF NOT EXISTS " + ProspectoSchema.ProspectEntry.TABLE_NAME +
                 "(" +
-                ProspectoSchema.ProspectEntry.ID + "INTEGER PRIMARY KEY AUTOINCREMENT," +
-                ProspectoSchema.ProspectEntry.NOMBRE + "TEXT NOT NULL," +
-                ProspectoSchema.ProspectEntry.PRIMER_APELLIDO + "TEXT NOT NULL," +
-                ProspectoSchema.ProspectEntry.SEGUNDO_APELLIDO + "TEXT," +
-                ProspectoSchema.ProspectEntry.CALLE + "TEXT NOT NULL," +
-                ProspectoSchema.ProspectEntry.NUMERO + "TEXT NOT NULL," +
-                ProspectoSchema.ProspectEntry.COLONIA + "TEXT NOT NULL," +
-                ProspectoSchema.ProspectEntry.CODIGO_POSTAL + "TEXT NOT NULL," +
-                ProspectoSchema.ProspectEntry.TELEFONO + "TEXT NOT NULL," +
-                ProspectoSchema.ProspectEntry.RFC + "TEXT NOT NULL,"+
-                ProspectoSchema.ProspectEntry.ESTATUS + "TEXT NOT NULL," +
-                ProspectoSchema.ProspectEntry.COMENTARIO_RECHAZO + "TEXT" +
+                ProspectoSchema.ProspectEntry.ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                ProspectoSchema.ProspectEntry.NOMBRE + " TEXT NOT NULL," +
+                ProspectoSchema.ProspectEntry.PRIMER_APELLIDO + " TEXT NOT NULL," +
+                ProspectoSchema.ProspectEntry.SEGUNDO_APELLIDO + " TEXT," +
+                ProspectoSchema.ProspectEntry.CALLE + " TEXT NOT NULL," +
+                ProspectoSchema.ProspectEntry.NUMERO + " TEXT NOT NULL," +
+                ProspectoSchema.ProspectEntry.COLONIA + " TEXT NOT NULL," +
+                ProspectoSchema.ProspectEntry.CODIGO_POSTAL + " TEXT NOT NULL," +
+                ProspectoSchema.ProspectEntry.TELEFONO + " TEXT NOT NULL," +
+                ProspectoSchema.ProspectEntry.RFC + " TEXT NOT NULL,"+
+                ProspectoSchema.ProspectEntry.ESTATUS + " INTEGER NOT NULL," +
+                ProspectoSchema.ProspectEntry.COMENTARIO_RECHAZO + " TEXT" +
                 ")"
         );
 
         db.execSQL("CREATE TABLE IF NOT EXISTS " + DocumentoSchema.DocumentoEntry.TABLE_NAME +
                 "(" +
-                DocumentoSchema.DocumentoEntry.ID_USUARIO + "INTEGER NOT NULL," +
-                DocumentoSchema.DocumentoEntry.NOMBRE + "TEXT NOT NULL," +
-                DocumentoSchema.DocumentoEntry.IMG_DOCUMENTO + "BLOB NOT NULL"+
+                DocumentoSchema.DocumentoEntry.ID_USUARIO + " INT NOT NULL," +
+                DocumentoSchema.DocumentoEntry.NOMBRE + " TEXT NOT NULL," +
+                DocumentoSchema.DocumentoEntry.IMG_DOCUMENTO + " BLOB NOT NULL"+
                 ")"
         );
 
@@ -67,9 +67,8 @@ public class BDHelper extends SQLiteOpenHelper {
         contentValues.put(ProspectoSchema.ProspectEntry.CODIGO_POSTAL, prospecto.getCodigoPostal());
         contentValues.put(ProspectoSchema.ProspectEntry.TELEFONO, prospecto.getTelefono());
         contentValues.put(ProspectoSchema.ProspectEntry.RFC, prospecto.getRFC());
-        contentValues.put(ProspectoSchema.ProspectEntry.ESTATUS, String.valueOf(Prospecto.ESTATUS_PROSPECTO.ENVIADO));
-        long id = db.insert(ProspectoSchema.ProspectEntry.TABLE_NAME, null, contentValues);
-        return id;
+        contentValues.put(ProspectoSchema.ProspectEntry.ESTATUS, prospecto.getEstatus());
+        return db.insert(ProspectoSchema.ProspectEntry.TABLE_NAME, null, contentValues);
     }
 
     /**
@@ -113,17 +112,18 @@ public class BDHelper extends SQLiteOpenHelper {
      * @param idUsuario
      * @return Cursor
      */
-    public Cursor GetProspectoByID(long idUsuario){
+    public Cursor GetProspectoByID(String idUsuario){
         SQLiteDatabase db = getReadableDatabase();
-        String selection = ProspectoSchema.ProspectEntry.ID + " WHERE ?";
-        String[] selectionArgs = new String[]{"" + idUsuario};
-        return  db.query(ProspectoSchema.ProspectEntry.TABLE_NAME, null,
+        String selection = ProspectoSchema.ProspectEntry.ID + " = ? " ;
+        String[] selectionArgs = new String[]{idUsuario};
+        Cursor c = db.query(ProspectoSchema.ProspectEntry.TABLE_NAME, null,
                 selection,
                 selectionArgs,
                 null,
                 null,
                 null
-                );
+        );
+        return  c;
     }
 
     /**
@@ -133,11 +133,11 @@ public class BDHelper extends SQLiteOpenHelper {
      * @param comentarioRechazo
      * @return BOOLEAN
      */
-    public boolean UpdateProspecto(long idUsuario, String estatus, String comentarioRechazo){
+    public boolean UpdateProspecto(String idUsuario, int estatus, String comentarioRechazo){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
-        String selection = ProspectoSchema.ProspectEntry.ID + " WHERE ?";
+        String selection = ProspectoSchema.ProspectEntry.ID + " = ?";
         String[] selectionArgs = new String[]{"" + idUsuario};
 
         contentValues.put(ProspectoSchema.ProspectEntry.ESTATUS, estatus);
@@ -152,10 +152,10 @@ public class BDHelper extends SQLiteOpenHelper {
      * @param idUsuario
      * @return
      */
-    public Cursor GetDocumentoByidUsuario(long idUsuario){
+    public Cursor GetDocumentoByidUsuario(String idUsuario){
         SQLiteDatabase db = getReadableDatabase();
-        String selection = DocumentoSchema.DocumentoEntry.ID_USUARIO + " WHERE ?";
-        String[] selectionArgs = new String[]{"" + idUsuario};
+        String selection = DocumentoSchema.DocumentoEntry.ID_USUARIO + " = ?";
+        String[] selectionArgs = new String[]{idUsuario};
         return  db.query(DocumentoSchema.DocumentoEntry.TABLE_NAME, null,
                 selection,
                 selectionArgs,
@@ -164,7 +164,6 @@ public class BDHelper extends SQLiteOpenHelper {
                 null
         );
     }
-
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

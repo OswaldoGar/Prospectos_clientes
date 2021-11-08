@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:backgroundTint="@color/gray"
         android:layout_margin="10dp"
-        android:layout_height="100dp">
+        android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_gravity="center_vertical"
@@ -41,7 +41,7 @@
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
@@ -52,7 +52,7 @@
 
             <TextView
                 android:id="@+id/EstatusProspecto"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="5dp"
                 android:layout_height="wrap_content"
@@ -63,16 +63,16 @@
 
             <Button
                 android:id="@+id/BtnVerDetalles"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text="Ver detalles"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
 
 

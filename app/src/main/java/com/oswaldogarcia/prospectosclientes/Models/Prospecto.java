@@ -13,12 +13,13 @@ public class Prospecto {
     private String CodigoPostal;
     private String Telefono;
     private String RFC;
-    private String Estatus;
+    private int Estatus;
 
-    public Prospecto(String nombre, String primerApellido, String segundoApellido, String calle,
-                     String numero, String colonia, String codigoPostal, String telefono, String rfc){
+    public Prospecto(String id, String nombre, String primerApellido, String segundoApellido, String calle,
+                     String numero, String colonia, String codigoPostal, String telefono, String rfc,
+                     int estatus){
 
-        this.ID = UUID.randomUUID().toString();
+        this.ID = id;
         this.Nombre = nombre;
         this.PrimerApellido = primerApellido;
         this.SegundoApellido = segundoApellido;
@@ -28,6 +29,7 @@ public class Prospecto {
         this.CodigoPostal = codigoPostal;
         this.Telefono = telefono;
         this.RFC = rfc;
+        this.Estatus = estatus;
     }
 
     public String getID(){
@@ -60,7 +62,7 @@ public class Prospecto {
     public String getRFC(){
         return RFC;
     }
-
+    public int getEstatus(){return Estatus;}
 
     public enum ESTATUS_PROSPECTO{
         RECHAZADO,

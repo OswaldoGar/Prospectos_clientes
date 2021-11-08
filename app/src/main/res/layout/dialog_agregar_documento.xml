@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="15dp"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:text="Agregar documento"
+        android:textSize="20dp" />
+
+
+
+    <TextView
+        android:text="Paso 1.- Agrega un nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/EditNombreDocumento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ej, Licencia de conducir"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="126dp" />
+
+    <TextView
+        android:text="Paso 2.- Selecciona un documento de tu galería"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/ButtonSeleccionarDocumento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar"
+        android:textAllCaps="false" />
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="end"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/buttonCancelar"
+            android:text="Cancelar"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/buttonAgregar"
+            android:text="Guardar"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            style="?android:attr/buttonBarButtonStyle" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

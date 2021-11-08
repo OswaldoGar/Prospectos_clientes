@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_agregar_prospecto.xml" value="0.25" />
+        <entry key="../../../../layout/custom_preview.xml" value="0.11510416666666666" />
+        <entry key="app/src/main/res/layout/activity_agregar_prospecto.xml" value="0.20189274447949526" />
         <entry key="app/src/main/res/layout/activity_detalles_prospecto.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/cardview_documento_prospecto.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/cardview_prospecto.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/cardview_prospecto.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/dialog_agregar_documento.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/dialog_ver_documento.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/toolbar.xml" value="0.375" />
       </map>
     </option>
   </component>

@@ -131,6 +131,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/DocumentosTitulo"
                 android:layout_width="wrap_content"
                 android:textColor="@color/black"
                 android:textStyle="bold"
